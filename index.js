@@ -23,14 +23,14 @@ $(function() {
 				var Name = json.query.results.quote.Name;
 				$("#response").append("<table>");
 				$("#response").append('<tr><td align="left">Latest Stock Price:</td><td>$'+LastTradePriceOnly+"</td></tr>");
-				$("#response").append('<tr><td align="left">Change:</td><td>'+Change+"</td></tr>");
+				$("#response").append('<tr><td align="left">Change:</td><td>'+Change+"</td></tr><hr>");
 				$("#response").append('<tr><td colspan="2" align="center"><i>Prediction For '+Name+'</i></td></tr>');
 				var target = makeTarget(LastTradePriceOnly);
 				var recommendation = makeRecommendation(LastTradePriceOnly,target);
 				var confidence = makeConfidence();				
-				$("#response").append('<tr><td align="left">Turing Test Stock Picker Target:</td><td><span style="font-weight:bold">$'+target+"</span></td></tr>");
-				$("#response").append('<tr><td align="left">Turing Test Stock Picker Recommendation:</td><td>'+recommendation+"</td></tr>");
-				$("#response").append('<tr><td align="left">Turing Test Stock Picker Confidence:</td><td>'+confidence+"</td></tr>");
+				$("#response").append('<tr><td align="left">Target:</td><td><span style="font-weight:bold">$'+target+"</span></td></tr>");
+				$("#response").append('<tr><td align="left">Recommendation:</td><td>'+recommendation+"</td></tr>");
+				$("#response").append('<tr><td align="left">Confidence:</td><td>'+confidence+"</td></tr>");
 				$("#response").append("</table>");
 			},
 			error: function(err){
